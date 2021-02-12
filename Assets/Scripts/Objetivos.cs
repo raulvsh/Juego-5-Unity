@@ -19,10 +19,12 @@ public class Objetivos : MonoBehaviour
     public int valorPuntos;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
         rbObjetivo = GetComponent<Rigidbody>();
+
 
         transform.position = PosGenerator();
 
@@ -60,22 +62,28 @@ public class Objetivos : MonoBehaviour
     {
         if (controlJuego.isActive)
         {
+
             Destroy(gameObject);
+
             Instantiate(explosion, transform.position, transform.rotation);
             controlJuego.ActualizarMarcador(valorPuntos);
+
         }
-        
+
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
+
         Destroy(gameObject);
-        if (gameObject.CompareTag("Bueno"))
+        if (gameObject.CompareTag("Bueno") && controlJuego.vidas!=0) 
+        {
+            controlJuego.ActualizarVidas(-1);
+        }
+        if(controlJuego.vidas==0)
         {
             controlJuego.GameOver();
-
-
         }
     }
 }

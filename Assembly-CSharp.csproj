@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Course Library\_Source_Files\Scripts\DestroyAfterDelay.cs" />
+    <Compile Include="Assets\Scripts\BotonDificultad.cs" />
     <Compile Include="Assets\Scripts\ControlJuego.cs" />
     <Compile Include="Assets\Scripts\Objetivos.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
